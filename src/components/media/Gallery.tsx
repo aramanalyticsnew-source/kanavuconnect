@@ -107,7 +107,7 @@ export function Gallery({ items, categories }: GalleryProps) {
                     <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold-soft">
                       {item.category}
                     </span>
-                    <span className="mt-1 block font-display text-xl">{item.caption}</span>
+                    <span className="mt-1 block font-display text-[1.125rem]">{item.caption}</span>
                   </span>
                   <Expand className="h-4 w-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100" strokeWidth={1.5} aria-hidden />
                 </span>
@@ -178,7 +178,7 @@ export function Gallery({ items, categories }: GalleryProps) {
 
             <div className="px-6 py-6 text-center sm:px-10" onClick={(e) => e.stopPropagation()}>
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold-soft">{current.category}</p>
-              <p className="mt-1 font-display text-2xl text-ivory">{current.caption}</p>
+              <p className="mt-1 font-display text-[1.3rem] text-ivory">{current.caption}</p>
             </div>
           </motion.div>
         )}

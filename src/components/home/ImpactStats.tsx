@@ -17,7 +17,7 @@ export function ImpactStats() {
               <dt className="mt-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-muted">
                 {stat.label}
               </dt>
-              <dd className="font-display text-5xl leading-none text-ink sm:text-7xl">
+              <dd className="font-display text-[2.5rem] leading-none text-ink sm:text-[3.75rem]">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </dd>
             </Reveal>

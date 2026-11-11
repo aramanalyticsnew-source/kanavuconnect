@@ -23,7 +23,7 @@
   --color-muted: #6f6b63;
   --color-line: #e8dcc6;
 
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-baskerville), "Libre Baskerville", Georgia, serif;
   --font-sans: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --tracking-eyebrow: 0.28em;
@@ -92,7 +92,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-serif: var(--font-baskerville), "Libre Baskerville", Georgia, serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -124,24 +124,47 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Typography system — headings: Libre Baskerville; everything else: Manrope. */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.01em;
     color: var(--color-ink);
     text-wrap: balance;
+    font-kerning: normal;
+  }
+
+  /* Large display headings: medium weight, tight tracking. */
+  h1,
+  h2 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  /* Smaller headings: firmer weight so they hold up at small sizes. */
+  h3,
+  h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  /* Italic accents inside headings use Baskerville's true italic at regular weight. */
+  :is(h1, h2, h3) em {
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 
   p {
     text-wrap: pretty;
   }
 
-  /* Display numerals and labels default to semibold; explicit weight utilities still win. */
+  /* Display numerals and names default to medium; explicit weight utilities still win. */
   .font-display {
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: -0.015em;
   }
 
   ::selection {

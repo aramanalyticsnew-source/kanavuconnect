@@ -33,7 +33,7 @@ export function WhoShouldAttend() {
               className="group relative w-[78%] shrink-0 snap-start border border-line bg-white p-7 transition-colors duration-500 hover:bg-white sm:w-auto sm:border-0 sm:border-b sm:border-r sm:bg-ivory sm:p-10"
             >
               <span className="font-display text-lg text-gold">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-5 text-3xl sm:mt-6">{audience.title}</h3>
+              <h3 className="mt-5 text-[1.375rem] sm:mt-6 sm:text-[1.625rem]">{audience.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted">{audience.members.join(" · ")}</p>
               <span
                 className="absolute bottom-0 left-0 h-px w-0 bg-gold transition-all duration-700 ease-luxe group-hover:w-full"

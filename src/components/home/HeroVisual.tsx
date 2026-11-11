@@ -73,17 +73,17 @@ export function HeroVisual() {
       ))}
 
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 border-t border-gold/25 bg-maroon-ink/60 p-6 backdrop-blur-sm sm:p-8">
-        <p className="max-w-[15rem] font-display text-2xl leading-tight text-ivory sm:text-[1.75rem]">
+        <p className="max-w-[15rem] font-display text-[1.3rem] leading-tight text-ivory sm:text-[1.45rem]">
           Curated evenings across eight regions
         </p>
         <dl className="flex gap-6 text-right">
           <div className="flex flex-col-reverse">
             <dt className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-ivory/70">Districts</dt>
-            <dd className="font-display text-3xl font-semibold text-gold-bright">{regionStats.districts}</dd>
+            <dd className="font-display text-[1.625rem] font-semibold text-gold-bright">{regionStats.districts}</dd>
           </div>
           <div className="flex flex-col-reverse">
             <dt className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-ivory/70">Per evening</dt>
-            <dd className="font-display text-3xl font-semibold text-gold-bright">{regionStats.participantsPerEvent}</dd>
+            <dd className="font-display text-[1.625rem] font-semibold text-gold-bright">{regionStats.participantsPerEvent}</dd>
           </div>
         </dl>
       </div>

@@ -43,7 +43,7 @@ export function GreenInitiative({ tone = "deep" }: { tone?: "deep" | "ivory" | "
                   className="flex flex-col-reverse border-line pt-8 first:border-r first:pr-6 last:pl-6 sm:last:pl-10"
                 >
                   <dt className="mt-3 text-sm text-muted">{stat.label}</dt>
-                  <dd className="font-display text-6xl leading-none text-ink sm:text-7xl">
+                  <dd className="font-display text-[3.125rem] leading-none text-ink sm:text-[3.75rem]">
                     <CountUp value={stat.value} />
                   </dd>
                 </Reveal>

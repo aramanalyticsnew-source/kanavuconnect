@@ -22,7 +22,7 @@ export function SponsorshipShowcase() {
                 {reachStats.map((stat) => (
                   <div key={stat.label} className="flex flex-col-reverse">
                     <dt className="mt-2 text-[0.7rem] leading-snug text-muted">{stat.label}</dt>
-                    <dd className="font-display text-4xl text-ink">{stat.value}</dd>
+                    <dd className="font-display text-[1.875rem] text-ink">{stat.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -39,9 +39,9 @@ export function SponsorshipShowcase() {
                   href={`/sponsorship#${tier.slug}`}
                   className="group grid grid-cols-[3rem_1fr_auto] items-center gap-4 border-b border-line py-7 transition-colors duration-500 hover:bg-ivory sm:grid-cols-[4rem_1fr_auto] sm:px-4"
                 >
-                  <span className="font-display text-xl italic text-gold">{tier.rank}</span>
+                  <span className="font-display text-[1.125rem] italic text-gold">{tier.rank}</span>
                   <span>
-                    <span className="block font-display text-3xl leading-tight text-ink sm:text-[2.1rem]">{tier.name}</span>
+                    <span className="block font-display text-[1.625rem] leading-tight text-ink sm:text-[1.75rem]">{tier.name}</span>
                     <span className="mt-1.5 block text-sm leading-relaxed text-muted">{tier.positioning}</span>
                   </span>
                   <ArrowUpRight

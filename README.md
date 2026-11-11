@@ -12,7 +12,7 @@ npm start          # serve the production build
 npm run typecheck  # TypeScript only
 ```
 
-Requires Node.js 20.9 or later. Fonts (Cormorant Garamond and Manrope) load through `next/font/google`, so the first build needs internet access.
+Requires Node.js 20.9 or later. Fonts (Libre Baskerville and Manrope) load through `next/font/google`, so the first build needs internet access.
 
 ## Routes
 
@@ -79,7 +79,7 @@ Add more later with `npx shadcn@latest add <name>`; they will go to the same fol
 | destructive | `#B4533C` | |
 | radius | `0.375rem` | |
 
-**Fonts:** `font-sans` is Manrope. `font-display` / `font-serif` is Cormorant Garamond. Dialog and Sheet titles use Cormorant.
+**Fonts:** `font-sans` is Manrope. `font-display` / `font-serif` is Libre Baskerville. All headings (h1–h4), Dialog and Sheet titles use Libre Baskerville; body text, navigation, buttons and labels use Manrope.
 
 **Naming note:** the site already uses `text-muted` for its grey body text, so shadcn's `--color-muted` utility is *not* remapped. None of the installed components use `bg-muted`. If a future component does, change it to `bg-secondary` or `bg-accent`.
 

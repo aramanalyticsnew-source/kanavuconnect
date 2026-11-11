@@ -140,7 +140,7 @@ export function EnquiryForm({ defaultType = "general", lockType = false, idPrefi
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-maroon-ink">
             <Check className="h-6 w-6" strokeWidth={1.75} aria-hidden />
           </span>
-          <h3 className="mt-8 text-4xl">Thank you, {values.fullName.split(" ")[0]}.</h3>
+          <h3 className="mt-8 text-[1.875rem]">Thank you, {values.fullName.split(" ")[0]}.</h3>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
             Your {typeMeta.label.toLowerCase()} has been recorded on this page. Online submissions are not yet connected,
             so please send it to our team by email to make sure it reaches us.

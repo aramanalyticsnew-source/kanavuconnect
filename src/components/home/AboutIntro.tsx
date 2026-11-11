@@ -9,7 +9,7 @@ export function AboutIntro() {
     <Section tone="white" id="about">
       <Container size="wide">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
-          <Reveal className="relative lg:col-span-5" y={24}>
+          <Reveal className="relative min-w-0 lg:col-span-5" y={24}>
             <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-maroon-deep p-8 sm:aspect-square sm:p-10 lg:aspect-[4/5]">
               <div
                 className="absolute inset-0 opacity-[0.12]"
@@ -21,13 +21,13 @@ export function AboutIntro() {
               />
               <p className="eyebrow relative text-gold-soft">Kanavu · கனவு</p>
               <div className="relative">
-                <p lang="ta" className="font-display text-[5.5rem] font-bold leading-none text-gold-bright sm:text-[7rem]">
+                <p lang="ta" className="font-display text-[4rem] font-bold leading-none text-gold-bright sm:text-[6rem] lg:text-[5.5rem] xl:text-[6.5rem]">
                   கனவு
                 </p>
-                <p className="mt-4 font-display text-2xl italic text-ivory/85 sm:text-3xl">noun — a dream.</p>
+                <p className="mt-4 font-display text-[1.3rem] italic text-ivory/85 sm:text-[1.625rem]">noun — a dream.</p>
               </div>
               <div className="relative border-t border-gold/25 pt-6">
-                <p className="font-display text-5xl font-semibold leading-none text-ivory">{ambition.value}</p>
+                <p className="font-display text-[2.5rem] font-semibold leading-none text-ivory">{ambition.value}</p>
                 <p className="mt-2 text-sm text-ivory/70">
                   {ambition.label} · <span className="text-gold-soft">{ambition.timeframe}</span>
                 </p>
@@ -49,8 +49,8 @@ export function AboutIntro() {
             <ol className="mt-14 border-t border-line">
               {aboutIntro.pillars.map((pillar, i) => (
                 <Reveal as="li" key={pillar.title} delay={i * 0.08} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-line py-7 sm:grid-cols-[4rem_14rem_1fr] sm:gap-6">
-                  <span className="font-display text-2xl text-gold">0{i + 1}</span>
-                  <h3 className="text-2xl leading-tight">{pillar.title}</h3>
+                  <span className="font-display text-[1.3rem] text-gold">0{i + 1}</span>
+                  <h3 className="text-[1.3rem] leading-tight">{pillar.title}</h3>
                   <p className="col-start-2 text-sm leading-relaxed text-muted sm:col-start-auto">{pillar.body}</p>
                 </Reveal>
               ))}

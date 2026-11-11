@@ -26,7 +26,7 @@ export function Networking() {
                   className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-4 border-b border-ivory/10 py-6 sm:grid-cols-[3rem_16rem_1fr]"
                 >
                   <span className="text-[0.7rem] font-semibold tabular-nums text-gold">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="font-display text-2xl text-ivory transition-colors group-hover:text-gold-soft">
+                  <h3 className="font-display text-[1.3rem] text-ivory transition-colors group-hover:text-gold-soft">
                     {item.title}
                   </h3>
                   <p className="col-start-2 text-sm leading-relaxed text-ivory/60 sm:col-start-auto">{item.body}</p>

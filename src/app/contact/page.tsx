@@ -41,7 +41,7 @@ export default function ContactPage() {
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted">Email · all enquiries</p>
                     <a
                       href={`mailto:${site.email}`}
-                      className="mt-2 flex items-center gap-3 font-display text-2xl text-ink transition-colors hover:text-gold-ink"
+                      className="mt-2 flex items-center gap-3 font-display text-[1.15rem] text-ink transition-colors [overflow-wrap:anywhere] hover:text-gold-ink sm:text-[1.3rem]"
                     >
                       <Mail className="h-5 w-5 text-gold" strokeWidth={1.25} aria-hidden />
                       {site.email}
@@ -53,7 +53,7 @@ export default function ContactPage() {
                       <div key={phone.href} className="mt-2 flex items-center justify-between gap-4">
                         <a
                           href={phone.href}
-                          className="flex items-center gap-3 font-display text-2xl text-ink transition-colors hover:text-gold-ink"
+                          className="flex items-center gap-3 font-display text-[1.3rem] text-ink transition-colors hover:text-gold-ink"
                         >
                           <Phone className="h-5 w-5 text-gold" strokeWidth={1.25} aria-hidden />
                           {phone.display}
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted">Website</p>
-                    <p className="mt-2 font-display text-2xl text-ink">{site.website}</p>
+                    <p className="mt-2 font-display text-[1.3rem] text-ink">{site.website}</p>
                   </li>
                 </ul>
               </Reveal>
@@ -97,7 +97,7 @@ export default function ContactPage() {
             {/* Form */}
             <div className="lg:col-span-8">
               <Reveal className="bg-white p-8 sm:p-12">
-                <h2 className="text-4xl">Send an enquiry</h2>
+                <h2 className="text-[1.875rem]">Send an enquiry</h2>
                 <p className="mt-3 mb-10 text-sm text-muted">Tell us a little about yourself and how you&apos;d like to be involved.</p>
                 <Suspense fallback={<div className="h-[36rem]" aria-hidden />}>
                   <EnquiryForm idPrefix="contact" />
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 >
                   <span>
                     <span className="font-display text-lg text-gold">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="mt-4 block font-display text-3xl text-ink">{type.label.replace(" enquiry", "")}</span>
+                    <span className="mt-4 block font-display text-[1.625rem] text-ink">{type.label.replace(" enquiry", "")}</span>
                     <span className="mt-3 block text-sm leading-relaxed text-muted">{type.description}</span>
                   </span>
                   <span className="inline-flex items-center gap-2 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-charcoal group-hover:text-gold-ink">

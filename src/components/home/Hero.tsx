@@ -17,7 +17,7 @@ export function Hero() {
               </div>
             </div>
             <div className="rise" style={{ animationDelay: "0.08s" }}>
-              <h1 className="text-[3.1rem] leading-[0.98] sm:text-7xl lg:text-[5.5rem] xl:text-[6.25rem]">
+              <h1 className="text-[2.5rem] leading-[1.08] sm:text-[3.75rem] lg:text-[4.5rem] xl:text-[5.125rem]">
                 Connect. Collaborate.
                 <br />
                 <em className="text-gold-ink">Start.</em> Grow.

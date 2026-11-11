@@ -16,7 +16,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Logo size={96} tone="light" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-ivory/60">{site.description}</p>
-            <p className="mt-8 font-display text-xl font-semibold italic text-gold-bright">{site.tagline}</p>
+            <p className="mt-8 font-display text-[1.125rem] font-semibold italic text-gold-bright">{site.tagline}</p>
           </div>
 
           <div className="lg:col-span-2">

@@ -55,3 +55,34 @@ export const mediaOpportunities = [
   { title: "Reels & social", body: "Collaborative reels, social tags and influencer campaigns." },
   { title: "Video", body: "Promotional video and teaser branding, and highlight video branding." },
 ];
+
+/**
+ * Official Kanavu Connect event photography (optimised copies of the
+ * originals in public/Images, which is git-ignored). Captions describe what is shown only.
+ */
+export const aboutImages = {
+  logoLaunch: {
+    src: "/photos/about/logo-launch.jpg",
+    alt: "Guests on stage unveiling the Kanavu Connect logo",
+    width: 2400,
+    height: 1600,
+  },
+  keynote: {
+    src: "/photos/about/keynote.jpg",
+    alt: "A speaker addressing guests in front of the Kanavu Connect logo",
+    width: 1600,
+    height: 1066,
+  },
+  openFloor: {
+    src: "/photos/about/open-floor.jpg",
+    alt: "An attendee speaking into a microphone during an open-floor session",
+    width: 1800,
+    height: 1200,
+  },
+  panel: {
+    src: "/photos/about/panel-discussion.jpg",
+    alt: "A moderator leading a panel discussion on stage",
+    width: 1800,
+    height: 1200,
+  },
+} as const;

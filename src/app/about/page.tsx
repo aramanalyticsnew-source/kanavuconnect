@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { aboutIntro, ambition, impactStats, mission, site, vision } from "@/content/site";
 import { audiences } from "@/content/experience";
-import { images } from "@/content/media";
+import { aboutImages } from "@/content/media";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
 import { CountUp } from "@/components/ui/CountUp";
@@ -28,7 +28,7 @@ export default function AboutPage() {
           </>
         }
         intro={aboutIntro.summary}
-        image={{ src: images.dinner, alt: "An elegantly prepared dinner hall" }}
+        image={{ src: aboutImages.logoLaunch.src, alt: aboutImages.logoLaunch.alt, position: "center 22%" }}
       />
 
       {/* Positioning statement */}
@@ -36,13 +36,40 @@ export default function AboutPage() {
         <Container size="narrow" className="text-center">
           <Reveal>
             <p className="eyebrow">Our purpose</p>
-            <p className="mt-8 font-display text-3xl leading-[1.3] text-ink sm:text-4xl lg:text-[2.75rem]">
+            <p className="mt-8 font-display text-[1.625rem] leading-[1.3] text-ink sm:text-[1.875rem] lg:text-[2.25rem]">
               To build {site.positioning} — reaching beyond the
               metros to Tier-2, Tier-3, Tier-4 and rural communities, where ambition is plentiful and access is not.
             </p>
           </Reveal>
         </Container>
       </Section>
+
+      {/* Event photography */}
+      <section aria-label="Moments from Kanavu Connect" className="bg-ivory pb-16 sm:pb-24 lg:pb-32">
+        <Container size="wide">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-12">
+            {[
+              { img: aboutImages.openFloor, caption: "Open-floor conversations", span: "md:col-span-7", aspect: "aspect-[3/2]" },
+              { img: aboutImages.panel, caption: "Panel discussions", span: "md:col-span-5", aspect: "aspect-[3/2] md:aspect-auto md:h-full" },
+            ].map(({ img, caption, span, aspect }, i) => (
+              <Reveal key={img.src} delay={i * 0.08} as="article" className={span}>
+                <figure className={`paper group relative overflow-hidden ${aspect}`}>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(min-width: 768px) 55vw, 100vw"
+                    className="object-cover transition-transform duration-[1.2s] ease-luxe group-hover:scale-[1.03]"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-maroon-ink/75 to-transparent p-5 pt-16 font-display text-[1.125rem] text-ivory sm:p-6 sm:pt-20 sm:text-[1.3rem]">
+                    {caption}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Vision & mission */}
       <Section tone="white">
@@ -53,7 +80,7 @@ export default function AboutPage() {
               <ul className="mt-12 border-t border-line">
                 {vision.map((item, i) => (
                   <Reveal as="li" key={item} delay={i * 0.06} className="flex gap-6 border-b border-line py-6">
-                    <span className="font-display text-xl text-gold">0{i + 1}</span>
+                    <span className="font-display text-[1.125rem] text-gold">0{i + 1}</span>
                     <p className="text-base leading-relaxed text-charcoal">{item}</p>
                   </Reveal>
                 ))}
@@ -64,12 +91,12 @@ export default function AboutPage() {
               <ul className="mt-12 border-t border-line">
                 {mission.map((item, i) => (
                   <Reveal as="li" key={item} delay={i * 0.06} className="flex gap-6 border-b border-line py-6">
-                    <span className="font-display text-xl text-gold">0{i + 1}</span>
+                    <span className="font-display text-[1.125rem] text-gold">0{i + 1}</span>
                     <p className="text-base leading-relaxed text-charcoal">{item}</p>
                   </Reveal>
                 ))}
               </ul>
-              <p className="mt-10 font-display text-2xl italic text-gold-ink">Connect · Start · Grow</p>
+              <p className="mt-10 font-display text-[1.3rem] italic text-gold-ink">Connect · Start · Grow</p>
             </div>
           </div>
         </Container>
@@ -81,11 +108,12 @@ export default function AboutPage() {
           <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-20">
             <Reveal y={40} className="paper relative aspect-[4/5] overflow-hidden lg:col-span-5">
               <Image
-                src={images.meeting}
-                alt="Entrepreneurs in discussion around a table"
+                src={aboutImages.keynote.src}
+                alt={aboutImages.keynote.alt}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
+                style={{ objectPosition: "22% center" }}
               />
             </Reveal>
             <div className="lg:col-span-7">
@@ -93,7 +121,7 @@ export default function AboutPage() {
               <div className="mt-12 space-y-10">
                 {aboutIntro.pillars.map((pillar, i) => (
                   <Reveal key={pillar.title} delay={i * 0.08} className="grid gap-3 sm:grid-cols-[12rem_1fr] sm:gap-8">
-                    <h3 className="text-3xl leading-tight">{pillar.title}</h3>
+                    <h3 className="text-[1.625rem] leading-tight">{pillar.title}</h3>
                     <p className="text-base leading-relaxed text-muted">{pillar.body}</p>
                   </Reveal>
                 ))}
@@ -113,7 +141,7 @@ export default function AboutPage() {
                 <dt className="mt-3 max-w-[12rem] text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ivory/50">
                   {stat.label}
                 </dt>
-                <dd className="font-display text-6xl text-ivory">
+                <dd className="font-display text-[3.125rem] text-ivory">
                   <CountUp value={stat.value} suffix={stat.suffix} />
                 </dd>
               </Reveal>
@@ -122,7 +150,7 @@ export default function AboutPage() {
               <dt className="mt-3 max-w-[12rem] text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ivory/50">
                 {ambition.label} · {ambition.timeframe}
               </dt>
-              <dd className="font-display text-6xl text-gold-soft">{ambition.value}</dd>
+              <dd className="font-display text-[3.125rem] text-gold-soft">{ambition.value}</dd>
             </Reveal>
           </dl>
         </Container>
@@ -142,7 +170,7 @@ export default function AboutPage() {
           <ul className="mt-14 grid gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((a, i) => (
               <Reveal as="li" key={a.title} delay={(i % 3) * 0.06} className="border-t border-line py-7">
-                <h3 className="text-2xl">{a.title}</h3>
+                <h3 className="text-[1.3rem]">{a.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{a.members.join(" · ")}</p>
               </Reveal>
             ))}

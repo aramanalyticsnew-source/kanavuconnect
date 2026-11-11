@@ -44,7 +44,7 @@ export default function SponsorshipPage() {
                 {reachStats.map((stat) => (
                   <div key={stat.label} className="flex items-baseline justify-between gap-6 border-b border-line pb-6">
                     <dt className="text-sm text-muted">{stat.label}</dt>
-                    <dd className="font-display text-4xl text-ink">{stat.value}</dd>
+                    <dd className="font-display text-[1.875rem] text-ink">{stat.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -53,7 +53,7 @@ export default function SponsorshipPage() {
               {whyPartner.map((item, i) => (
                 <Reveal as="li" key={item.title} delay={(i % 2) * 0.08} className="border-t border-line py-8">
                   <span className="font-display text-lg text-gold">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-3 text-3xl">{item.title}</h3>
+                  <h3 className="mt-3 text-[1.625rem]">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
                 </Reveal>
               ))}

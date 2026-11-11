@@ -143,7 +143,7 @@ export function Navbar() {
                   >
                     <span
                       className={cn(
-                        "font-display text-[2rem] font-bold leading-none",
+                        "font-display text-[1.65rem] font-bold leading-none",
                         isActive(item.href) ? "text-gold-ink" : "text-ink",
                       )}
                     >

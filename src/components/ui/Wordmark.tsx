@@ -6,7 +6,7 @@ export function Wordmark({ className, tone = "dark" }: { className?: string; ton
     <span className={cn("inline-flex flex-col leading-none", className)}>
       <span
         className={cn(
-          "font-display text-[1.15rem] font-bold sm:text-[1.45rem] uppercase tracking-[0.06em]",
+          "font-display text-[1rem] font-bold sm:text-[1.2rem] uppercase tracking-[0.06em]",
           tone === "dark" ? "text-ink" : "text-gold-bright",
         )}
       >

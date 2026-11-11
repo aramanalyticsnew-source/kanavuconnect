@@ -54,7 +54,7 @@ export function RegionsExplorer({ initialSlug, showEnquiry = true }: RegionsExpl
                     <span className={cn("text-[0.7rem] font-semibold tabular-nums", selected ? "text-gold-ink" : "text-muted/70")}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-display text-2xl sm:text-[1.7rem]">{region.name}</span>
+                    <span className="font-display text-[1.3rem] sm:text-[1.4rem]">{region.name}</span>
                   </span>
                   <span
                     className={cn(
@@ -135,7 +135,7 @@ export function RegionsExplorer({ initialSlug, showEnquiry = true }: RegionsExpl
             <p className="eyebrow flex items-center gap-2">
               <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden /> Regional hub
             </p>
-            <h3 className="mt-4 text-5xl">{active.name}</h3>
+            <h3 className="mt-4 text-[2.5rem] lg:text-[2rem] xl:text-[2.125rem] 2xl:text-[2.5rem]">{active.name}</h3>
             <p className="mt-3 text-sm text-muted">
               {active.statedCount !== null
                 ? `${active.statedCount} districts`

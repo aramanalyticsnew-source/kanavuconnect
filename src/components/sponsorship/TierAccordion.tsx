@@ -38,11 +38,11 @@ export function TierAccordion({ tiers }: { tiers: Tier[] }) {
                 onClick={() => setOpen(isOpen ? null : tier.slug)}
                 className="group grid w-full grid-cols-[2.75rem_1fr_auto] items-center gap-4 py-8 text-left sm:grid-cols-[4.5rem_1fr_auto] sm:gap-6"
               >
-                <span className="font-display text-2xl italic text-gold">{tier.rank}</span>
+                <span className="font-display text-[1.3rem] italic text-gold">{tier.rank}</span>
                 <span>
                   <span
                     className={cn(
-                      "block font-display text-3xl leading-tight transition-colors sm:text-4xl",
+                      "block font-display text-[1.625rem] leading-tight transition-colors sm:text-[1.875rem]",
                       isOpen ? "text-ink" : "text-ink/80 group-hover:text-ink",
                     )}
                   >
@@ -53,11 +53,11 @@ export function TierAccordion({ tiers }: { tiers: Tier[] }) {
                 <span
                   className={cn(
                     "flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-500 ease-luxe",
-                    isOpen ? "rotate-45 border-maroon bg-maroon text-gold-bright" : "border-line text-charcoal group-hover:border-gold",
+                    isOpen ? "border-maroon bg-maroon text-gold-bright" : "border-line text-charcoal group-hover:border-gold",
                   )}
                   aria-hidden
                 >
-                  <Plus className="h-4 w-4" strokeWidth={1.5} />
+                  <Plus className={cn("h-4 w-4 transition-transform duration-500 ease-luxe", isOpen && "rotate-45")} strokeWidth={1.5} />
                 </span>
               </button>
             </h3>

@@ -41,7 +41,7 @@ export default function RegionsPage() {
             ].map((s, i) => (
               <Reveal key={s.l} delay={i * 0.08} className="flex flex-col-reverse border-line px-2 [&:not(:last-child)]:border-r">
                 <dt className="mt-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted sm:text-[0.7rem]">{s.l}</dt>
-                <dd className="font-display text-5xl text-ink sm:text-7xl">{s.v}</dd>
+                <dd className="font-display text-[2.5rem] text-ink sm:text-[3.75rem]">{s.v}</dd>
               </Reveal>
             ))}
           </dl>
@@ -80,7 +80,7 @@ export default function RegionsPage() {
                         ? "Union Territory"
                         : `${region.districts.length} districts listed`}
                   </p>
-                  <h3 className="mt-4 text-3xl transition-colors group-hover:text-gold-ink">{region.name}</h3>
+                  <h3 className="mt-4 text-[1.625rem] transition-colors group-hover:text-gold-ink lg:text-[1.375rem] xl:text-[1.5rem]">{region.name}</h3>
                 </Link>
                 <ul className="mt-5 space-y-1.5 text-sm text-muted">
                   {region.districts.map((d) => (

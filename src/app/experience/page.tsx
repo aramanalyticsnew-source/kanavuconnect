@@ -63,7 +63,7 @@ export default function ExperiencePage() {
                   </span>
                   <div className="pt-1">
                     <p className="eyebrow">Stage {stage.number}</p>
-                    <h3 className="mt-3 text-3xl sm:text-4xl">{stage.title}</h3>
+                    <h3 className="mt-3 text-[1.625rem] sm:text-[1.875rem]">{stage.title}</h3>
                     <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">{stage.detail}</p>
                   </div>
                 </Reveal>
@@ -86,7 +86,7 @@ export default function ExperiencePage() {
             {guestTiers.map((tier, i) => (
               <Reveal key={tier.title} delay={i * 0.08} className="bg-maroon-deep p-8 sm:p-10 lg:first:pl-0">
                 <span className="font-display text-lg italic text-gold">{["I", "II", "III"][i]}</span>
-                <h3 className="mt-5 text-3xl text-ivory">{tier.title}</h3>
+                <h3 className="mt-5 text-[1.625rem] text-ivory">{tier.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-ivory/60">{tier.description}</p>
               </Reveal>
             ))}
@@ -109,9 +109,9 @@ export default function ExperiencePage() {
                 delay={(i % 2) * 0.06}
                 className="grid gap-4 border-b border-line py-10 sm:grid-cols-[4rem_1fr] md:odd:border-r md:odd:pr-10 md:even:pl-10"
               >
-                <span className="font-display text-xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-[1.125rem] text-gold">{String(i + 1).padStart(2, "0")}</span>
                 <div>
-                  <h3 className="text-3xl">{audience.title}</h3>
+                  <h3 className="text-[1.625rem]">{audience.title}</h3>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {audience.members.map((m) => (
                       <li key={m} className="border border-line px-3.5 py-1.5 text-xs text-charcoal">
@@ -140,7 +140,7 @@ export default function ExperiencePage() {
                 <Reveal as="li" key={item.title} delay={i * 0.05} className="flex items-baseline gap-6 border-t border-line py-6 last:border-b">
                   <span className="text-[0.7rem] font-semibold tabular-nums text-gold-ink">{String(i + 1).padStart(2, "0")}</span>
                   <div>
-                    <h3 className="text-2xl">{item.title}</h3>
+                    <h3 className="text-[1.3rem]">{item.title}</h3>
                     <p className="mt-1.5 text-sm text-muted">{item.body}</p>
                   </div>
                 </Reveal>

@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+// Headings: Libre Baskerville (variable, 400–700, with italics).
+const baskerville = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-baskerville",
   display: "swap",
 });
 
+// Body, navigation, buttons and labels: Manrope.
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -43,7 +44,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${baskerville.variable} ${manrope.variable}`}>
       <body>
         <Navbar />
         <main id="main">{children}</main>

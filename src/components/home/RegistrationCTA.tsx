@@ -32,7 +32,7 @@ export function RegistrationCTA({
             <p className="eyebrow">{eyebrow}</p>
             <span className="gold-rule" aria-hidden />
           </div>
-          <h2 className="text-5xl leading-[1.04] sm:text-6xl lg:text-7xl">{title}</h2>
+          <h2 className="text-[2.5rem] leading-[1.1] sm:text-[3.125rem] lg:text-[3.75rem]">{title}</h2>
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted sm:text-lg">{body}</p>
         </Reveal>
         <Reveal delay={0.15}>

@@ -94,7 +94,7 @@ export function InteractiveTimeline({ stages }: { stages: Stage[] }) {
                 </span>
                 <span
                   className={cn(
-                    "font-display text-xl leading-tight transition-colors duration-300 lg:text-[1.15rem] xl:text-xl",
+                    "font-display text-[1.125rem] leading-tight transition-colors duration-300 lg:text-[1rem] xl:text-[1.125rem]",
                     selected ? "text-ink" : "text-muted group-hover:text-ink",
                   )}
                 >
@@ -122,9 +122,9 @@ export function InteractiveTimeline({ stages }: { stages: Stage[] }) {
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="grid gap-6 lg:col-span-10 lg:grid-cols-10 lg:items-baseline"
           >
-            <p className="font-display text-7xl leading-none text-gold/70 lg:col-span-2 lg:text-8xl">{current.number}</p>
+            <p className="font-display text-[3.75rem] leading-none text-gold/70 lg:col-span-2 lg:text-[4.75rem]">{current.number}</p>
             <div className="lg:col-span-8">
-              <h3 className="text-3xl sm:text-4xl">{current.title}</h3>
+              <h3 className="text-[1.625rem] sm:text-[1.875rem]">{current.title}</h3>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{current.detail}</p>
             </div>
           </motion.div>
