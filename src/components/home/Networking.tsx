@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { guestTiers, networkingOpportunities } from "@/content/experience";
-import { images } from "@/content/media";
+import { eventPhotos } from "@/content/media";
 import { Container, Section } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -38,8 +38,8 @@ export function Networking() {
           <div className="lg:col-span-6">
             <Reveal y={40} className="paper relative aspect-[5/4] overflow-hidden">
               <Image
-                src={images.toast}
-                alt="Guests raising a toast at an evening dinner"
+                src={eventPhotos.networkingCircle.src}
+                alt={eventPhotos.networkingCircle.alt}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

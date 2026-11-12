@@ -7,9 +7,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { GalleryCategory, GalleryItem } from "@/content/media";
 import { cn } from "@/lib/cn";
 
-type GalleryProps = { items: GalleryItem[]; categories: GalleryCategory[] };
+type GalleryProps = { items: GalleryItem[]; categories?: GalleryCategory[] };
 
-export function Gallery({ items, categories }: GalleryProps) {
+export function Gallery({ items, categories = [] }: GalleryProps) {
   const [filter, setFilter] = useState<GalleryCategory | "All">("All");
   const [index, setIndex] = useState<number | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -50,6 +50,7 @@ export function Gallery({ items, categories }: GalleryProps) {
 
   return (
     <div>
+      {categories.length > 0 && (
       <div role="group" aria-label="Filter gallery" className="mb-12 flex flex-wrap gap-x-8 gap-y-3 border-b border-line">
         {(["All", ...categories] as const).map((cat) => (
           <button
@@ -69,6 +70,7 @@ export function Gallery({ items, categories }: GalleryProps) {
           </button>
         ))}
       </div>
+      )}
 
       <motion.ul layout className="grid auto-rows-[15rem] grid-cols-1 gap-4 sm:grid-cols-2 sm:auto-rows-[16rem] lg:grid-cols-3 lg:auto-rows-[18rem]">
         <AnimatePresence mode="popLayout">

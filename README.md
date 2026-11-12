@@ -21,7 +21,8 @@ Requires Node.js 20.9 or later. Fonts (Libre Baskerville and Manrope) load throu
 | `/` | Hero, impact stats, about, who should attend, 7-stage timeline, regional explorer, networking, sponsorship showcase, Green Entrepreneurship Initiative, registration CTA |
 | `/about` | Purpose, vision and mission, commitments, numbers, communities served |
 | `/experience` | Interactive and detailed seven-stage timeline, guest tiers, audiences, networking |
-| `/regions` | Hub explorer (deep-link with `?hub=salem`), directory of all hubs and districts |
+| `/regions` | Regional Events Explorer: map and hub selector, districts, Upcoming/Ongoing/Completed filters and event cards. Shareable state: `?hub=salem&status=upcoming`. `/regions/salem` redirects there |
+| `/regions/[hub]/events/[event]` | Event detail page (statically generated, SEO metadata, structured data for confirmed events only) |
 | `/sponsorship` | Why partner, seven-tier accordion (deep-link with `#gold`), comparison table, category partnerships, green initiative |
 | `/media` | Filterable gallery with lightbox, media opportunities, media enquiry form |
 | `/contact` | Direct contact, validated enquiry form (prefill with `?type=sponsorship&tier=gold&region=salem`), enquiry desks |
@@ -87,3 +88,13 @@ Add more later with `npx shadcn@latest add <name>`; they will go to the same fol
 - Focus rings use `ring-ring` at full opacity instead of `ring-ring/50`, so focus stays visible (≥3:1).
 - `DialogTitle` and `SheetTitle` use `font-display text-2xl`.
 - Imports point to `@/lib/utils` and `@/components/shadcn`.
+
+## Regional events
+
+Events live in **`src/content/events.ts`** and hubs in **`src/content/regions.ts`**.
+
+- Every event has exactly one `regionId` (type-checked against the eight hub IDs). The explorer and detail pages only show a hub's own events, and an event URL under the wrong hub returns 404.
+- Add as many events per hub as needed. Each event is its own record, so you can update one without touching the others.
+- Status (Upcoming / Ongoing / Completed) is calculated from `startDate` / `endDate`. Undated events use `plannedStatus`.
+- **Placeholders:** each hub currently has one planned *Regional Networking Dinner*. It's marked `placeholder: true`, with no date, venue or registration link. Placeholders show a visible notice, are excluded from structured data and are `noindex`.
+- **To publish a real event:** set `placeholder: false`, then fill in `startDate` / `endDate` (ISO with `+05:30`), `venue` and optionally `registrationUrl`. "Register interest" uses `registrationUrl` if set, otherwise the hub's enquiry form.

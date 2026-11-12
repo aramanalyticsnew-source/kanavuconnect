@@ -1,37 +1,56 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
 import { orderedRegions, regionStats } from "@/content/regions";
-import { images } from "@/content/media";
+import { events } from "@/content/events";
+import { eventPhotos } from "@/content/media";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { RegionsExplorer } from "@/components/regions/RegionsExplorer";
-import { RegionsExplorerFromParams } from "@/components/regions/RegionsExplorerFromParams";
+import { RegionalEventsExplorer } from "@/components/regions/RegionalEventsExplorer";
 import { RegistrationCTA } from "@/components/home/RegistrationCTA";
 
 export const metadata: Metadata = {
-  title: "Regions",
+  title: "Regional Events",
   description:
-    "Eight regional hubs covering 38 districts across Tamil Nadu and Puducherry: Kanyakumari, Madurai, Trichy, Coimbatore, Salem, Thiruvannamalai, Chennai and Puducherry.",
+    "Explore Kanavu Connect's eight regional hubs across Tamil Nadu and Puducherry — Kanyakumari, Madurai, Trichy, Coimbatore, Salem, Thiruvannamalai, Chennai and Puducherry — and the events planned in each.",
+  alternates: { canonical: "/regions" },
 };
+
+/** Static placeholder shown for the split second before URL parameters are read. */
+function ExplorerFallback() {
+  return (
+    <div aria-hidden className="animate-pulse">
+      <div className="flex gap-2 overflow-hidden">
+        {orderedRegions.map((r) => (
+          <div key={r.slug} className="h-11 w-32 shrink-0 bg-ivory-deep" />
+        ))}
+      </div>
+      <div className="mt-12 grid gap-10 lg:grid-cols-12">
+        <div className="paper aspect-[4/5] lg:col-span-4" />
+        <div className="grid gap-6 md:grid-cols-2 lg:col-span-8">
+          <div className="h-96 bg-ivory-deep" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function RegionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Regions & districts"
+        eyebrow="Regional events"
         title={
           <>
             Eight hubs. <em className="text-gold-ink">Every</em> corner of the state.
           </>
         }
-        intro={`${regionStats.coverage}. Each hub brings together ${regionStats.participantsPerEvent} participants for its own regional evening.`}
-        image={{ src: images.hall, alt: "A prepared event hall" }}
+        intro={`${regionStats.coverage}. Choose a hub to see its districts and the evenings planned there.`}
+        image={{ src: eventPhotos.venueArrivals.src, alt: eventPhotos.venueArrivals.alt, position: "center 45%" }}
       />
 
-      <Section tone="ivory" className="border-b border-line">
+      <Section tone="ivory" className="border-b border-line py-12! sm:py-16!">
         <Container size="wide">
           <dl className="grid grid-cols-3 text-center">
             {[
@@ -51,46 +70,14 @@ export default function RegionsPage() {
       <Section tone="white" id="explorer">
         <Container size="wide">
           <SectionHeading
-            eyebrow="Explore the network"
-            title="Find your regional hub."
-            intro="Select a hub on the list or map to see the districts it serves."
-            className="mb-16"
+            eyebrow="Regional Events Explorer"
+            title="Find your hub, then your evening."
+            intro="Each hub runs its own schedule. Select a hub on the map or list to see its districts and only the events planned there."
+            className="mb-10 sm:mb-12"
           />
-          <Suspense fallback={<RegionsExplorer />}>
-            <RegionsExplorerFromParams />
+          <Suspense fallback={<ExplorerFallback />}>
+            <RegionalEventsExplorer regions={orderedRegions} events={events} />
           </Suspense>
-        </Container>
-      </Section>
-
-      <Section tone="ivory">
-        <Container size="wide">
-          <SectionHeading eyebrow="Directory" title="All hubs and districts." className="mb-14" />
-          <div className="grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
-            {orderedRegions.map((region, i) => (
-              <Reveal
-                key={region.slug}
-                delay={(i % 4) * 0.05}
-                className="border-b border-r border-line bg-ivory p-8 transition-colors duration-500 hover:bg-white"
-              >
-                <Link href={`/regions?hub=${region.slug}#explorer`} className="group block">
-                  <p className="eyebrow">
-                    {region.statedCount !== null
-                      ? `${region.statedCount} districts`
-                      : region.slug === "puducherry"
-                        ? "Union Territory"
-                        : `${region.districts.length} districts listed`}
-                  </p>
-                  <h3 className="mt-4 text-[1.625rem] transition-colors group-hover:text-gold-ink lg:text-[1.375rem] xl:text-[1.5rem]">{region.name}</h3>
-                </Link>
-                <ul className="mt-5 space-y-1.5 text-sm text-muted">
-                  {region.districts.map((d) => (
-                    <li key={d}>{d}</li>
-                  ))}
-                </ul>
-                {region.note && <p className="mt-5 text-xs leading-relaxed text-muted/80">{region.note}</p>}
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </Section>
 

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { aboutIntro, ambition, impactStats, mission, site, vision } from "@/content/site";
 import { audiences } from "@/content/experience";
-import { aboutImages } from "@/content/media";
+import { aboutImages, eventPhotos, type GalleryItem } from "@/content/media";
+import { Gallery } from "@/components/media/Gallery";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
 import { CountUp } from "@/components/ui/CountUp";
@@ -16,6 +17,17 @@ export const metadata: Metadata = {
   description:
     "Kanavu Connect links established business leaders with first-generation, rural, women and young entrepreneurs across Tamil Nadu and Puducherry.",
 };
+
+const aboutGallery: GalleryItem[] = [
+  { ...eventPhotos.lampLighting, caption: "Lighting the lamp", category: "Moments", span: "wide" },
+  { ...eventPhotos.sponsorWall, caption: "Conversations at the partner wall", category: "Networking" },
+  { ...eventPhotos.recognitionGroup, caption: "On-stage recognition", category: "Moments", span: "tall" },
+  { ...eventPhotos.networkingCircle, caption: "Networking", category: "Networking" },
+  { ...eventPhotos.stageAddress, caption: "Address from the podium", category: "Stage" },
+  { ...eventPhotos.audienceFrontRow, caption: "The audience", category: "Audience", span: "wide" },
+  { ...eventPhotos.welcomeHandshake, caption: "A warm welcome", category: "Networking" },
+  { ...eventPhotos.recognitionMemento, caption: "Presenting a memento", category: "Moments" },
+];
 
 export default function AboutPage() {
   return (
@@ -128,6 +140,25 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </Container>
+      </Section>
+
+      {/* Event gallery */}
+      <Section tone="ivory" id="gallery">
+        <Container size="wide">
+          <div className="mb-12 flex flex-col gap-8 sm:mb-14 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading
+              eyebrow="Inside Kanavu Connect"
+              title="The room, in moments."
+              intro="Opening rituals, stage sessions, recognitions and the conversations in between. Select any photo to view it full size."
+            />
+            <Reveal delay={0.1} className="shrink-0">
+              <ButtonLink href="/media" variant="outline">
+                Full gallery
+              </ButtonLink>
+            </Reveal>
+          </div>
+          <Gallery items={aboutGallery} />
         </Container>
       </Section>
 

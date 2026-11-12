@@ -21,7 +21,7 @@ Please confirm the items below with the Kanavu Connect team before launch.
 ## Not published on the reference site (intentionally left out)
 
 - Sponsorship prices, amounts and slot counts. The site says these are shared on request
-- Event dates, timings and venues for each hub. The site shows "Venue and date: to be confirmed"
+- Event dates, timings and venues for each hub. Each hub has one **development placeholder** event (*[Hub] Regional Networking Dinner*) in `src/content/events.ts`, showing "Date to be announced" and "Venue to be confirmed". No completed events are listed
 - Organiser, team and guest names
 - Registration fees and eligibility. The site treats registration as an expression of interest
 - Physical address, office hours and social media links

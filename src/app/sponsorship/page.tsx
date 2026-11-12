@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { categoryPartnerships, reachStats, sponsorshipTerms, tiers, whyPartner } from "@/content/sponsorship";
-import { images } from "@/content/media";
+import { eventPhotos } from "@/content/media";
 import { site } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
@@ -29,7 +29,7 @@ export default function SponsorshipPage() {
           </>
         }
         intro="Reach business owners, founders, investors and emerging entrepreneurs across eight regional markets — with visibility that runs from outdoor and print to the networking dinner itself."
-        image={{ src: images.stage, alt: "A speaker on a lit conference stage" }}
+        image={{ src: eventPhotos.sponsorWall.src, alt: eventPhotos.sponsorWall.alt, position: "center 35%" }}
       >
         <ButtonLink href="/contact?type=sponsorship">Enquire about sponsorship</ButtonLink>
       </PageHero>

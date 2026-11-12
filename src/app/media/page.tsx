@@ -36,8 +36,7 @@ export default function MediaPage() {
           <Reveal>
             <p className="mb-10 flex items-start gap-3 text-xs leading-relaxed text-muted">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} aria-hidden />
-              Images shown are representative. Official photography from regional evenings will be added as events take
-              place.
+              Photographs from Kanavu Connect events. Select any image to view it full size.
             </p>
           </Reveal>
           <Gallery items={gallery} categories={galleryCategories} />

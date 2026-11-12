@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
 // Headings: Libre Baskerville (variable, 400–700, with italics).

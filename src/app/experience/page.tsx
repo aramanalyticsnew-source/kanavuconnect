@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { audiences, eventFormat, guestTiers, networkingOpportunities, stages } from "@/content/experience";
-import { images } from "@/content/media";
+import { eventPhotos } from "@/content/media";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,7 +26,7 @@ export default function ExperiencePage() {
           </>
         }
         intro={`${eventFormat.duration} in seven deliberate stages, designed for ${eventFormat.attendance}.`}
-        image={{ src: images.keynote, alt: "An audience facing a conference stage" }}
+        image={{ src: eventPhotos.panelSession.src, alt: eventPhotos.panelSession.alt, position: "center 30%" }}
       />
 
       {/* Interactive overview */}
@@ -50,7 +50,7 @@ export default function ExperiencePage() {
               <div className="lg:sticky lg:top-32">
                 <SectionHeading eyebrow="In detail" title="From first handshake to final course." />
                 <Reveal delay={0.1} className="paper relative mt-12 hidden aspect-[4/5] overflow-hidden lg:block">
-                  <Image src={images.dinner} alt="Banquet tables prepared for dinner" fill sizes="30vw" className="object-cover" />
+                  <Image src={eventPhotos.audienceTables.src} alt={eventPhotos.audienceTables.alt} fill sizes="30vw" className="object-cover" />
                 </Reveal>
               </div>
             </div>
